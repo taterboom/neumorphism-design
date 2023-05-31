@@ -2,26 +2,54 @@
 @tailwind components;
 @tailwind utilities;
 
-:root {
-  --foreground-rgb: 0, 0, 0;
-  --background-start-rgb: 214, 219, 220;
-  --background-end-rgb: 255, 255, 255;
+.neumorphism-button {
+  @apply outline-none;
+  color: var(--foreground-color);
+  background-color: var(--background-color);
+  box-shadow: var(--size) var(--size) calc(var(--size) * 2) var(--shadow-color-1), calc(var(--size) * -1) calc(var(--size) * -1) calc(var(--size) * 2) var(--shadow-color-2);
 }
 
-@media (prefers-color-scheme: dark) {
-  :root {
-    --foreground-rgb: 255, 255, 255;
-    --background-start-rgb: 0, 0, 0;
-    --background-end-rgb: 0, 0, 0;
-  }
+.neumorphism-button:active {
+  box-shadow: inset var(--size) var(--size) calc(var(--size) * 2) var(--shadow-color-1), inset calc(var(--size) * -1) calc(var(--size) * -1) calc(var(--size) * 2) var(--shadow-color-2);
 }
 
-body {
-  color: rgb(var(--foreground-rgb));
-  background: linear-gradient(
-      to bottom,
-      transparent,
-      rgb(var(--background-end-rgb))
-    )
-    rgb(var(--background-start-rgb));
+.indicator {
+  @apply flex items-center gap-2 absolute left-52 whitespace-nowrap;
+}
+
+.indicator-line {
+  @apply w-48 h-0;
+  border-top-width: 1px;
+  border-style: dashed;
+  border-color: var(--foreground-color);
+  opacity: 0.3;
+}
+
+.indicator:nth-child(1) {
+  @apply -top-16 -translate-y-1/2
+}
+
+.indicator:nth-child(2) {
+  @apply -top-2 -translate-y-1/2
+}
+
+.indicator:nth-child(3) {
+  @apply top-1/2 -translate-y-1/2
+}
+
+.indicator:nth-child(4){
+  @apply -bottom-2 translate-y-1/2
+}
+
+.neumorphism-button:active .indicator:nth-child(2) {
+  @apply bottom-2 translate-y-1/2
+}
+
+.neumorphism-button:active .indicator:nth-child(4) {
+  @apply top-2 -translate-y-1/2
+}
+
+.neumorphism-text {
+  color: var(--foreground-color);
+  text-shadow: var(--size) var(--size) calc(var(--size) * 2) var(--shadow-color-1), calc(var(--size) * -1) calc(var(--size) * -1) calc(var(--size) * 2) var(--shadow-color-2);
 }
