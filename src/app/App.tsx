@@ -30,7 +30,7 @@ export default function App() {
 
   return (
     <main
-      className="flex min-h-screen flex-col items-center justify-center p-24"
+      className="flex min-h-screen flex-col items-center justify-center p-24 pt-48"
       style={{ background: backgroundColor }}
     >
       <div className="fixed top-12 left-1/2 -translate-x-1/2 flex gap-32 items-center">
