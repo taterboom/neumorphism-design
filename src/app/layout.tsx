@@ -3,7 +3,7 @@ import Providers from "./Providers"
 
 export const metadata = {
   title: "Neumorphism Design",
-  description: "Live Demo for Neumorphism Design",
+  description: "Live instruction for Neumorphism Design, web design with neumorphism style.",
 }
 
 export default function RootLayout({ children }: { children: React.ReactNode }) {
